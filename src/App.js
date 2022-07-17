@@ -69,6 +69,17 @@ const App = () => {
       Connect to Wallet
     </button>
   );
+  const renderConnectedContainer = () => (
+    <div className="connected-container">
+      <div className="gif-grid">
+        {TEST_GIFS.map(gif => (
+          <div className="gif-item" key={gif}>
+            <img src={gif} alt={gif} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 
   // UseEffects
   useEffect(() => {
