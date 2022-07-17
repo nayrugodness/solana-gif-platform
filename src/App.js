@@ -28,6 +28,8 @@ const App = () => {
       console.error(error);
     }
   };
+  // State
+  const [walletAddress, setWalletAddress] = useState(null);
 
   /*
    * Let's define this method so our code doesn't break.
