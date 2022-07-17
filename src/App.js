@@ -7,11 +7,13 @@ const TWITTER_HANDLE = '_buildspace';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
-  // Actions
+  // State
+  const [walletAddress, setWalletAddress] = useState(null);
+  
   const checkIfWalletIsConnected = async () => {
     try {
       const { solana } = window;
-
+  
       if (solana) {
         if (solana.isPhantom) {
           console.log('Phantom wallet found!');
@@ -20,6 +22,11 @@ const App = () => {
             'Connected with Public Key:',
             response.publicKey.toString()
           );
+  
+          /*
+           * Set the user's publicKey in state to be used later!
+           */
+          setWalletAddress(response.publicKey.toString());
         }
       } else {
         alert('Solana object not found! Get a Phantom Wallet 👻');
@@ -28,8 +35,7 @@ const App = () => {
       console.error(error);
     }
   };
-  // State
-  const [walletAddress, setWalletAddress] = useState(null);
+
 
   /*
    * Let's define this method so our code doesn't break.
