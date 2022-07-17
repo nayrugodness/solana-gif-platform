@@ -95,8 +95,8 @@ const App = () => {
       {/* This was solely added for some styling fanciness */}
 			<div className={walletAddress ? 'authed-container' : 'container'}>
         <div className="header-container">
-         // Change this stuff. Make it themed to something you're interested in.
-          // Ex. memes, music, games, cute animals, whatever!
+         {/* Change this stuff. Make it themed to something you're interested in.
+           Ex. memes, music, games, cute animals, whatever! */}
           <p className="header">🖼 GIF Portal</p> 
           <p className="sub-text">
             View your GIF collection in the metaverse ✨
