@@ -57,6 +57,14 @@ const App = () => {
       setWalletAddress(response.publicKey.toString());
     }
   };
+  const sendGif = async () => {
+    if (inputValue.length > 0) {
+      console.log('Gif link:', inputValue);
+    } else {
+      console.log('Empty input. Try again.');
+    }
+  };
+  
   const onInputChange = (event) => {
     const { value } = event.target;
     setInputValue(value);
