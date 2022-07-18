@@ -112,7 +112,6 @@ const [gifList, setGifList] = useState([]);
     </div>
   );
 
-  // UseEffects
   useEffect(() => {
     const onLoad = async () => {
       await checkIfWalletIsConnected();
@@ -120,6 +119,17 @@ const [gifList, setGifList] = useState([]);
     window.addEventListener('load', onLoad);
     return () => window.removeEventListener('load', onLoad);
   }, []);
+  
+  useEffect(() => {
+    if (walletAddress) {
+      console.log('Fetching GIF list...');
+      
+      // Call Solana program here.
+  
+      // Set state
+      setGifList(TEST_GIFS);
+    }
+  }, [walletAddress]);
 
   return (
     <div className="App">
