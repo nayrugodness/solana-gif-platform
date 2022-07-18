@@ -14,8 +14,9 @@ const TEST_GIFS = [
 
 const App = () => {
   // State
-  const [walletAddress, setWalletAddress] = useState(null);
-  const [inputValue, setInputValue] = useState('');
+const [walletAddress, setWalletAddress] = useState(null);
+const [inputValue, setInputValue] = useState('');
+const [gifList, setGifList] = useState([]);
 
   const checkIfWalletIsConnected = async () => {
     try {
