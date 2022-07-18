@@ -64,7 +64,7 @@ const App = () => {
       console.log('Empty input. Try again.');
     }
   };
-  
+
   const onInputChange = (event) => {
     const { value } = event.target;
     setInputValue(value);
@@ -84,19 +84,30 @@ const App = () => {
   );
   const renderConnectedContainer = () => (
     <div className="connected-container">
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          sendGif();
+        }}
+      >
+        <input
+          type="text"
+          placeholder="Enter gif link!"
+          value={inputValue}
+          onChange={onInputChange}
+        />
+        <button type="submit" className="cta-button submit-gif-button">
+          Submit
+        </button>
+      </form>
       <div className="gif-grid">
-        {TEST_GIFS.map(gif => (
+        {/* Map through gifList instead of TEST_GIFS */}
+        {gifList.map((gif) => (
           <div className="gif-item" key={gif}>
             <img src={gif} alt={gif} />
           </div>
         ))}
       </div>
-      <input
-        type="text"
-        placeholder="Enter gif link!"
-        value={inputValue}
-        onChange={onInputChange}
-      />
     </div>
   );
 
