@@ -57,6 +57,10 @@ const App = () => {
       setWalletAddress(response.publicKey.toString());
     }
   };
+  const onInputChange = (event) => {
+    const { value } = event.target;
+    setInputValue(value);
+  };
 
   /*
    * We want to render this UI when the user hasn't connected
