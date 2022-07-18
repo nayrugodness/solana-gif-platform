@@ -83,6 +83,12 @@ const App = () => {
           </div>
         ))}
       </div>
+      <input
+        type="text"
+        placeholder="Enter gif link!"
+        value={inputValue}
+        onChange={onInputChange}
+      />
     </div>
   );
 
